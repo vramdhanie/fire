@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./app.css";
 import { verses, baha } from "./tablet";
 import Slide from "./slide";
 import KeyboardEventHandler from "react-keyboard-event-handler";
@@ -29,15 +28,15 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <header className="app__header">
-        <h1>Fire Tablet</h1>
-        <h4 className="app__baha">{baha}</h4>
+    <div className="flex flex-col h-screen bg-blue-200">
+      <header className="p-2 text-center">
+        <h1 className="text-teal-800 text-3xl">Fire Tablet</h1>
+        <h4 className="text-teal-500">{baha}</h4>
       </header>
-      <main className="app__main">
+      <main className="flex-1">
         <Slide verse={tablet[n]} />
       </main>
-      <footer className="app__footer">
+      <footer className="text-center text-sm opacity-50 text-gray-700">
         &copy; {new Date().getFullYear()} Vincent Ramdhanie
       </footer>
       <KeyboardEventHandler
