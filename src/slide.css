@@ -1,0 +1,7 @@
+.slide {
+  margin: 0 auto;
+  padding: 40px;
+  font-size: calc(22px + 36 * ((100vw - 320px) / (1200 - 380)));
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
