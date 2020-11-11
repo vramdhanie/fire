@@ -46,7 +46,7 @@ function App() {
             classNames="page"
             unmountOnExit
           >
-            <Slide verse={tablet[verse]} />
+            <Slide verse={tablet[verse]} n={verse} />
           </CSSTransition>
         </SwitchTransition>
 
