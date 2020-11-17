@@ -7,6 +7,7 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 function App() {
   const [tablet, setTablet] = useState([]);
   const [verse, setVerse] = useState(0);
+  const [time, setTime] = useState([]);
 
   useEffect(() => {
     setTablet(verses);
@@ -14,15 +15,36 @@ function App() {
 
   const nextSlide = (key) => {
     let nextVerse;
+    let newTime = [...time];
     if (key === "r") {
       nextVerse = 0;
+      newTime = [];
     } else {
       const dir = ["a", "left"].includes(key) ? -1 : 1;
       nextVerse = (verse + dir) % tablet.length;
       nextVerse = nextVerse < 0 ? 0 : nextVerse;
+      if (dir > 0) {
+        newTime.push(Date.now());
+      } else {
+        if (nextVerse === 0) {
+          newTime = [];
+        }
+      }
     }
 
     setVerse(nextVerse);
+    setTime(newTime);
+  };
+
+  const average = () => {
+    return (
+      (time.length
+        ? time
+            .map((e, i) => e - (i === 0 ? e : time[i - 1]))
+            .reduce((acc, curr) => acc + curr, 0) / verse
+        : 0) *
+      (tablet.length - verse)
+    );
   };
 
   return (
@@ -52,8 +74,9 @@ function App() {
 
         <Controls nextSlide={nextSlide} n={verse} />
       </main>
-      <footer className="text-center text-xs opacity-50 text-gray-700">
-        &copy; {new Date().getFullYear()} Vincent Ramdhanie
+      <footer className="text-center text-xs opacity-50 text-gray-700 flex justify-between p-1">
+        <div>&copy; {new Date().getFullYear()} Vincent Ramdhanie</div>
+        <div>{Math.ceil(average() / 1000)} s</div>
       </footer>
     </div>
   );
