@@ -12,6 +12,7 @@ const Slide = ({ verse, n }) => {
     "my-0",
     "mx-auto",
     "p-6",
+      "max-w-4xl",
     { "text-2xl": n !== 48, "text-xl": n === 48 },
     "leading-10",
     "sm:text-4xl",
