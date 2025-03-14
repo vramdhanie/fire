@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { verses, baha } from "./tablet";
 import Slide from "./slide";
 import Controls from "./controls";
@@ -12,7 +12,6 @@ function App() {
   // Touch handling state
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  const [_swiping, setSwiping] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState(null);
   
   // Minimum swipe distance (in px) to trigger navigation
@@ -84,7 +83,6 @@ function App() {
   const onTouchStart = (e) => {
     setTouchEnd(null); // Reset touchEnd
     setTouchStart(e.targetTouches[0].clientX);
-    setSwiping(true);
   };
 
   // Handle touch move event
@@ -105,7 +103,6 @@ function App() {
 
   // Handle touch end event
   const onTouchEnd = () => {
-    setSwiping(false);
     setSwipeDirection(null);
     
     if (!touchStart || !touchEnd) return;
