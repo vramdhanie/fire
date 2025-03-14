@@ -3,6 +3,7 @@ import { verses, baha } from "./tablet";
 import Slide from "./slide";
 import Controls from "./controls";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
+import { FaGithub, FaTwitter, FaLinkedin, FaGlobe } from "react-icons/fa";
 
 function App() {
   const [tablet, setTablet] = useState([]);
@@ -170,9 +171,63 @@ function App() {
 
         <Controls nextSlide={nextSlide} n={verse} />
       </main>
-      <footer className="text-center text-xs text-parchment-light opacity-60 flex justify-between p-3">
-        <div className="font-serif">&copy; {new Date().getFullYear()} Vincent Ramdhanie</div>
-        <div className="font-script text-base">{Math.ceil(average() / 1000)} s</div>
+      <footer className="text-center text-parchment-light opacity-70 p-3 w-full">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-2 max-w-6xl mx-auto">
+          <div className="font-serif flex items-center order-1 sm:order-1">
+            &copy; {new Date().getFullYear()} 
+            <a 
+              href="https://vincentramdhanie.com" 
+              className="ml-1 hover:text-illumination-gold transition-colors duration-300"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Vincent Ramdhanie
+            </a>
+          </div>
+          
+          <div className="font-script text-base order-3 sm:order-2">
+            {Math.ceil(average() / 1000)} s
+          </div>
+          
+          <div className="flex items-center space-x-4 order-2 sm:order-3">
+            <a 
+              href="https://github.com/vramdhanie" 
+              className="text-parchment-light hover:text-illumination-gold transition-colors duration-300"
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+            >
+              <FaGithub className="text-lg" />
+            </a>
+            <a 
+              href="https://twitter.com/vramdhanie" 
+              className="text-parchment-light hover:text-illumination-gold transition-colors duration-300"
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Twitter Profile"
+            >
+              <FaTwitter className="text-lg" />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/vramdhanie" 
+              className="text-parchment-light hover:text-illumination-gold transition-colors duration-300"
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+            >
+              <FaLinkedin className="text-lg" />
+            </a>
+            <a 
+              href="https://vincentramdhanie.com" 
+              className="text-parchment-light hover:text-illumination-gold transition-colors duration-300"
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Personal Website"
+            >
+              <FaGlobe className="text-lg" />
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
