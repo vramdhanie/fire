@@ -9,7 +9,7 @@ A beautiful, interactive presentation of the Fire Tablet as a responsive slide s
 
 [Live Demo](https://vramdhanie.github.io/fire) | [Fire Tablet Text](https://www.bahai.org/library/authoritative-texts/prayers/bahai-prayers/5#814641272)
 
-![Fire Tablet App](https://via.placeholder.com/800x400?text=Fire+Tablet+App)
+
 
 ## ✨ Features
 
@@ -113,7 +113,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgements
 
 - The Fire Tablet text is from [Bahá'í Prayers](https://www.bahai.org/library/authoritative-texts/prayers/bahai-prayers/5#814641272)
-- Special thanks to all contributors and the open-source community
 
 ---
 
