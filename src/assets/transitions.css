@@ -1,18 +1,36 @@
 .page-enter {
   opacity: 0;
-  transform: scale(0.9);
-  transform: translateX(-100);
 }
+
 .page-enter-active {
   opacity: 1;
-  transform: translateX(0);
-  transition: opacity 100ms, transform 100ms;
+  transition: opacity 800ms ease-in-out;
 }
+
 .page-exit {
   opacity: 1;
 }
+
 .page-exit-active {
   opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 100ms, transform 100ms;
+  transition: opacity 800ms ease-in-out;
+}
+
+/* Add a subtle fade for book page effect */
+.book-fade-enter {
+  opacity: 0;
+}
+
+.book-fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.book-fade-exit {
+  opacity: 1;
+}
+
+.book-fade-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
 }

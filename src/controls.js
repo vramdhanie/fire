@@ -3,11 +3,11 @@ import { BsArrowCounterclockwise } from "react-icons/bs";
 
 const Controls = ({ nextSlide, n }) => {
   return (
-    <div className="text-center p-1">
-      <nav className="relative z-0 inline-flex shadow-sm my-0 mx-auto">
+    <div className="text-center p-2">
+      <nav className="relative z-10 inline-flex my-0 mx-auto">
         <div
           href=""
-          className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150 cursor-pointer"
+          className="relative inline-flex items-center px-3 py-2 rounded-l-md border border-illumination-gold/30 bg-parchment-dark/20 text-sm leading-5 font-medium text-parchment-light hover:bg-illumination-gold/10 focus:z-10 focus:outline-none focus:border-illumination-gold active:bg-illumination-gold/20 active:text-parchment-light transition ease-in-out duration-150 cursor-pointer"
           aria-label="Previous"
           onClick={(e) => {
             nextSlide("left");
@@ -27,38 +27,11 @@ const Controls = ({ nextSlide, n }) => {
             />
           </svg>
         </div>
-
-        {/* <div
-          href="#"
-          className="hidden md:inline-flex -ml-px relative items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
-        >
-          3
-        </div> */}
-        <span
-          className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 cursor-pointer"
-          onClick={(e) => {
-            nextSlide("r");
-            e.stopPropagation();
-          }}
-        >
-          <BsArrowCounterclockwise />
+        <span className="relative inline-flex items-center px-4 py-2 border border-l-0 border-r-0 border-illumination-gold/30 bg-parchment-dark/20 text-sm leading-5 font-script text-xl text-parchment-light">
+          {parseInt(n) + 1}
         </span>
-        {/* <div
-          href="#"
-          className="hidden md:inline-flex -ml-px relative items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
-        >
-          8
-        </div>
         <div
-          href="#"
-          className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
-        >
-          div
-        </a> */}
-
-        <div
-          href="#"
-          className="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150 cursor-pointer"
+          className="relative inline-flex items-center px-3 py-2 border border-illumination-gold/30 bg-parchment-dark/20 text-sm leading-5 font-medium text-parchment-light hover:bg-illumination-gold/10 focus:z-10 focus:outline-none focus:border-illumination-gold active:bg-illumination-gold/20 active:text-parchment-light transition ease-in-out duration-150 cursor-pointer"
           aria-label="Next"
           onClick={(e) => {
             nextSlide("right");
@@ -77,6 +50,16 @@ const Controls = ({ nextSlide, n }) => {
               clipRule="evenodd"
             />
           </svg>
+        </div>
+        <div
+          className="relative ml-3 inline-flex items-center px-3 py-2 rounded-md border border-illumination-gold/30 bg-parchment-dark/20 text-sm leading-5 font-medium text-parchment-light hover:bg-illumination-gold/10 focus:z-10 focus:outline-none focus:border-illumination-gold active:bg-illumination-gold/20 active:text-parchment-light transition ease-in-out duration-150 cursor-pointer"
+          aria-label="Reset"
+          onClick={(e) => {
+            nextSlide("r");
+            e.stopPropagation();
+          }}
+        >
+          <BsArrowCounterclockwise className="h-5 w-5" />
         </div>
       </nav>
     </div>
