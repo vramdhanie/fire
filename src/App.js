@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { verses, baha } from "./tablet";
 import Slide from "./slide";
 import Controls from "./controls";
@@ -18,7 +18,8 @@ function App() {
   // Minimum swipe distance (in px) to trigger navigation
   const minSwipeDistance = 50;
 
-  const nextSlide = (key) => {
+  // Wrap nextSlide in useCallback to prevent recreation on each render
+  const nextSlide = useCallback((key) => {
     let nextVerse;
     let newTime = [...time];
     
@@ -52,7 +53,7 @@ function App() {
 
     setVerse(nextVerse);
     setTime(newTime);
-  };
+  }, [verse, tablet, time]); // Include dependencies that the function uses from component scope
 
   useEffect(() => {
     setTablet(verses);
@@ -77,7 +78,7 @@ function App() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [verse, nextSlide]); 
+  }, [nextSlide]); // nextSlide is now stable thanks to useCallback
 
   // Handle touch start event
   const onTouchStart = (e) => {
