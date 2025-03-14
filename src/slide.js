@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import classNames from "classnames";
 
 const Slide = ({ verse, n }) => {

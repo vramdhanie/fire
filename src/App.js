@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { verses, baha } from "./tablet";
 import Slide from "./slide";
 import Controls from "./controls";
@@ -12,36 +12,11 @@ function App() {
   // Touch handling state
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  const [swiping, setSwiping] = useState(false);
+  const [_swiping, setSwiping] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState(null);
   
   // Minimum swipe distance (in px) to trigger navigation
   const minSwipeDistance = 50;
-
-  useEffect(() => {
-    setTablet(verses);
-    
-    // Add keyboard event listener for arrow key navigation
-    const handleKeyDown = (event) => {
-      switch (event.key) {
-        case 'ArrowRight':
-          nextSlide('right');
-          break;
-        case 'ArrowLeft':
-          nextSlide('left');
-          break;
-        default:
-          break;
-      }
-    };
-    
-    window.addEventListener('keydown', handleKeyDown);
-    
-    // Clean up event listener on component unmount
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [verse]); // Include verse in dependency array to ensure proper handling
 
   const nextSlide = (key) => {
     let nextVerse;
@@ -78,6 +53,31 @@ function App() {
     setVerse(nextVerse);
     setTime(newTime);
   };
+
+  useEffect(() => {
+    setTablet(verses);
+    
+    // Add keyboard event listener for arrow key navigation
+    const handleKeyDown = (event) => {
+      switch (event.key) {
+        case 'ArrowRight':
+          nextSlide('right');
+          break;
+        case 'ArrowLeft':
+          nextSlide('left');
+          break;
+        default:
+          break;
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [verse, nextSlide]); 
 
   // Handle touch start event
   const onTouchStart = (e) => {
