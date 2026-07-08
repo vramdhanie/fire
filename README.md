@@ -1,13 +1,14 @@
 # Fire Tablet
 
+[![Deploy](https://img.shields.io/github/actions/workflow/status/vramdhanie/fire/deploy.yml?branch=main&label=deploy&logo=github)](https://github.com/vramdhanie/fire/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-17.0.1-blue.svg)](https://reactjs.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.2.4-38B2AC.svg)](https://tailwindcss.com/)
-[![Deployed on GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-222222)](https://vramdhanie.github.io/fire)
+[![Deployed on GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-222222)](https://fire.vincentramdhanie.com)
 
 A beautiful, interactive presentation of the Fire Tablet as a responsive slide show. Each verse is presented on an elegantly styled page inspired by ancient religious manuscripts.
 
-[Live Demo](https://vramdhanie.github.io/fire) | [Fire Tablet Text](https://www.bahai.org/library/authoritative-texts/prayers/bahai-prayers/5#814641272)
+[Live Demo](https://fire.vincentramdhanie.com) | [Fire Tablet Text](https://www.bahai.org/library/authoritative-texts/prayers/bahai-prayers/5#814641272)
 
 
 
